@@ -1,24 +1,51 @@
-#API RESTful para Gerenciamento de Funcionários#
-Este projeto consiste em uma API RESTful para gerenciar informações de funcionários. A API oferece as seguintes funcionalidades:
+# API RESTful para Gerenciamento de Funcionários
+Esta API oferece endpoints para realizar as seguintes operações relacionadas a funcionários:
 
-Consulta de funcionários
-Cadastro de novos funcionários
-Edição de informações existentes
-Exclusão de funcionários
+- Consulta:
+  - ``` /api/Funcionario/consultar ``` : Consulta todos os funcionários cadastrados.
+  - ``` /api/Funcionario/consultar/{id} ``` : Consulta um funcionário específico pelo ID.
+- Cadastro:
+  - ``` /api/Funcionario/cadastrar ``` : Cadastra novos funcionários.
+- Edição:
+  - ``` /api/Funcionario/editar ``` : Edita informações de um funcionário. Informe o ID na chave “Id” para atualizar os 
+dados.
+- Ativar/Inativar:
+  - ``` /api/Funcionario/desativar/{id} ``` : Consulta o funcionário e altera o status de ativação (“ativo”) para true 
+ou false.
+- Exclusão:
+  - ``` /api/Funcionario/excluir/{id} ``` : Exclui um funcionário pelo ID.
 
-Branches
-O repositório possui duas branches principais:
+# Departamentos
+0: RH
+1: Financeiro
+2: Compras
+3: Atendimento
+4: Vendedor
+5: Zeladoria
+6: Estoque
 
-api:
-Contém apenas o back-end da API.
-Desenvolvida em C# com .NET 8.
-Utiliza o SQL Server como banco de dados.
-api_front:
-Além do back-end, inclui o front-end desenvolvido em Angular.
-Permite interação com a API por meio de uma interface de usuário.
-Ferramentas Utilizadas
-C#: Linguagem de programação para o back-end.
-.NET 8: Framework para desenvolvimento de aplicações.
-Angular: Framework para construção do front-end.
-SQL Server: Banco de dados relacional.
-WebAPI: Tecnologia para criação de APIs RESTful.
+# Turnos
+0: Manhã
+1: Tarde
+2: Noite
+ 
+# Esquema de Dados
+O retorno da API segue o seguinte esquema:
+```
+{
+  "dados": [
+    {
+      "id": 0,
+      "nome": "string",
+      "sobrenome": "string",
+      "departamento": "int",
+      "ativo": true,
+      "turno": "int",
+      "dtDeCriacao": "DateTime",
+      "dtDeAlteracao": "DateTime"
+    }
+  ],
+  "mensagem": "string",
+  "sucesso": "bool"
+}
+```
