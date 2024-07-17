@@ -4,6 +4,7 @@ Este projeto consiste em uma API RESTful para gerenciar informações de funcion
 - Consulta de funcionários
 - Cadastro de novos funcionários
 - Edição de informações existentes
+- Inativar/Ativar funcionario.
 - Exclusão de funcionários
 
 # Branches
