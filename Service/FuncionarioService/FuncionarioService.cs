@@ -74,7 +74,7 @@ namespace FuncionariosAPI.Service.FuncionarioService
             return serviceResponse;
         }
 
-        public async Task<ServiceResponse<List<FuncionarioModel>>> DisabledFuncionario(int Id)
+        public async Task<ServiceResponse<List<FuncionarioModel>>> DisabledFuncionario(int Id, bool status)
         {
             ServiceResponse<List<FuncionarioModel>> serviceResponse = new ServiceResponse<List<FuncionarioModel>>();
 
@@ -89,7 +89,7 @@ namespace FuncionariosAPI.Service.FuncionarioService
                     serviceResponse.Sucesso = false;
                 }
 
-                funcionario.Ativo = false;
+                funcionario.Ativo = status;
                 funcionario.DtDeAlteracao = DateTime.Now.ToLocalTime();   
                 _context.Funcionarios.Update(funcionario);
                 await _context.SaveChangesAsync();

@@ -16,7 +16,7 @@ namespace FuncionariosAPI.Service.FuncionarioService
         Task<ServiceResponse<FuncionarioModel>> GetFuncionarioById(int Id);
         Task<ServiceResponse<List<FuncionarioModel>>> UpdateFuncionario(FuncionarioModel editFuncionario);
         Task<ServiceResponse<List<FuncionarioModel>>> DeleteFuncionario(int Id);
-        Task<ServiceResponse<List<FuncionarioModel>>> DisabledFuncionario(int Id);
+        Task<ServiceResponse<List<FuncionarioModel>>> DisabledFuncionario(int Id, bool status);
 
 
     }

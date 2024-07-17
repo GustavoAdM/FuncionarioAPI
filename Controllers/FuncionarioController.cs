@@ -43,10 +43,10 @@ namespace FuncionariosAPI.Controllers
         }
 
 
-        [HttpPut("desativar/{id}")]
-        public async Task<ActionResult<ServiceResponse<List<FuncionarioModel>>>> DisableFuncionario(int id)
+        [HttpPut("desativar/{id}/{status}")]
+        public async Task<ActionResult<ServiceResponse<List<FuncionarioModel>>>> DisableFuncionario(int id, bool status)
         {
-            ServiceResponse<List<FuncionarioModel>> service = await _funcionarioInterface.DisabledFuncionario(id);
+            ServiceResponse<List<FuncionarioModel>> service = await _funcionarioInterface.DisabledFuncionario(id, status);
             return Ok(service);
         }
 
