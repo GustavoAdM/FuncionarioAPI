@@ -10,10 +10,14 @@ Esta API oferece endpoints para realizar as seguintes operações relacionadas a
   - ``` /api/Funcionario/editar ``` : Edita informações de um funcionário. Informe o ID na chave “Id” para atualizar os 
 dados.
 - Ativar/Inativar:
-  - ``` /api/Funcionario/desativar/{id} ``` : Consulta o funcionário e altera o status de ativação (“ativo”) para true 
+  - ``` /api/Funcionario/desativar/{id}/{status} ``` : Consulta o funcionário e altera o status de ativação (“ativo”) para true 
 ou false.
 - Exclusão:
   - ``` /api/Funcionario/excluir/{id} ``` : Exclui um funcionário pelo ID.
+ 
+Type:
+  - id = int
+  - status = bool (true/false)
 
 # Departamentos
 0: RH
